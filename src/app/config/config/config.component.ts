@@ -9,7 +9,7 @@ import { ConfigService } from '../services/config.service';
   styleUrls: ['./config.component.scss']
 })
 export class ConfigComponent {
-  config!: Observable<Config[]>;
+  config$!: Observable<Config[]>;
   displayedColumns: string[] = ['heroesUrl', 'textfile', 'date'];
 
   constructor(private configService: ConfigService) {
@@ -17,6 +17,6 @@ export class ConfigComponent {
   }
 
   showConfig() {
-    this.config = this.configService.getConfig();
+    this.config$ = this.configService.getConfig();
   }
 }
